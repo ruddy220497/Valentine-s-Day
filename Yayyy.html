@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rudu ❤️ Frooto | #SaRu Che</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #2b1055, #7597de);
+      font-family: 'Segoe UI', sans-serif;
+      overflow-y: auto;
+      color: white;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 26px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+      text-align: center;
+      max-width: 440px;
+      margin: 40px 0;
+    }
+
+    h1 { margin-bottom: 10px; font-size: 2.1em; }
+    h2 { margin-top: 10px; }
+    p { font-size: 1.05em; line-height: 1.6; margin-bottom: 22px; }
+    .miles { font-size: 0.95em; opacity: 0.9; margin-bottom: 18px; }
+
+    button {
+      padding: 14px 28px;
+      font-size: 1em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    #yesBtn {
+      background: #ff6b81;
+      color: white;
+      box-shadow: 0 6px 18px rgba(255, 107, 129, 0.6);
+    }
+
+    #noBtn {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    button:hover { transform: scale(1.08); }
+
+    .map-img {
+      width: 100%;
+      border-radius: 16px;
+      margin: 18px 0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .stars {
+      position: fixed;
+      top: -10px;
+      font-size: 18px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <h1>💖 Frooti 💖</h1>
+
+    <p>
+      Some love stories are written in heaven!<br>
+      Ours is written across oceans, time zones,<br>
+      late-night calls, quiet tears,<br>
+      and hearts that never stop choosing each other.
+    </p>
+
+    <p>
+      Even with <strong>7,635 miles</strong> between us,<br>
+      you live in every little moment of my day —
+      in my smiles, my patience, my hope.
+    </p>
+
+    <p>
+      Distance didn’t weaken us.<br>
+      It made me certain —<br>
+      loving you is home.
+    </p>
+
+    <p class="miles">
+      🇺🇸 ------ 🇮🇳<br>
+     <br>
+      ❤️ One love, one us ❤️<br>
+    </p>
+
+    <!-- -->
+    <img
+      class="map-img"
+      src="https://i.etsystatic.com/53055261/r/il/5ff082/6216129375/il_fullxfull.6216129375_hpu2.jpg"
+      alt="Map showing USA to India with a heart line">
+
+    <p>
+      From one side of the world to the other…
+    </p>
+
+    <h2>Will you be my Valentine? 💌</h2>
+
+    <button id="yesBtn" onclick="sayYes()">Haan… Always 💕</button>
+    <button id="noBtn">Try Harder</button>
+
+
+
+  </div>
+
+  <script>
+    function sayYes() {
+
+      document.getElementById("card").innerHTML = `
+        <h1>My Love ❤️</h1>
+
+        <p>
+          Thank you for choosing me<br>
+          even when loving me means waiting,<br>
+          trusting, and believing in “someday”.
+        </p>
+
+        <p>
+          One day, these miles will collapse into a hug.<br>
+          One day, airports won’t feel so heavy.<br>
+          Until then — every version of my future<br>
+          has you in it.
+        </p>
+
+        <p>
+          Always yours,<br>
+          <strong>Guggu 💖</strong>
+        </p>
+
+        <p style="opacity:0.8;">#SaRu Che 🌍❤️</p>
+      `;
+    }
+
+    // Falling stars effect
+    setInterval(() => {
+      const star = document.createElement("div");
+      star.className = "stars";
+      star.innerText = "✨";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (Math.random() * 4 + 3) + "s";
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 7000);
+    }, 400);
+  </script>
+
+
+    <script>
+        // Get references to the buttons
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        
+        // Initialize a scale factor for the target button
+        let scale = 1.0;
+
+        // Add an event listener to the trigger button
+        noBtn.addEventListener('click', function() {
+            // Increase the scale factor slightly with each click
+            scale += 0.1; 
+            
+            // Apply the new scale factor using CSS transform
+            // This makes the button grow smoothly from its center
+            yesBtn.style.transform = `scale(${scale})`;
+            
+            // Optional: Also increase the font size slightly for better readability
+            yesBtn.style.fontSize = `${16 * scale}px`;
+        });
+    </script>
+
+</body>
+</html>
